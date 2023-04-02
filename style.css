@@ -1,0 +1,66 @@
+body {
+    font-family: "lato",sans-serif;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.container{
+    width: auto ;
+    margin: auto;
+}
+
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700    ;
+}
+
+.btn{
+    position: relative;
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    outline: none;
+    font-size: 28px;
+    color: #fff;
+}
+
+.btn::after, .btn::before{
+    content: "";
+    z-index: -2;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transform: skewX(30deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+}
+
+.btn::before{
+    background-color: #000000;
+    top: -1rem;
+    left: 0rem;
+}
+
+.btn::after{
+    background-color: #ff4c4f;
+    top: 1rem;
+    left: 8rem;
+}
+
+.btn:hover::before, .btn:hover::after{
+    top: 0;
+    transform: skewX(0deg);
+}
+
+.btn:hover::after{
+    left: 0rem;
+}
+
+.btn:hover::before{
+    left: 8.75rem;
+}
